@@ -1,0 +1,54 @@
+.button {
+  display: inline-block;
+  cursor: pointer;
+  border: 0;
+  border-radius: 0.3em;
+  font-weight: 700;
+  line-height: 1;
+  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  &--primary {
+    background-color: #555ab9;
+    color: white;
+  }
+  &--secondary {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+    background-color: transparent;
+    color: #333;
+  }
+  &--round {
+    background-color: #333;
+    color: #fff;
+    padding: 0 15px;
+    border-radius: 10rem;
+  }
+  &--shadow {
+    border-radius: 0.3px;
+    background: #333;
+    color: #fff;
+    -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2),
+      0 2px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  &--xs {
+    padding: 3px 7px;
+    font-size: 9px;
+  }
+  &--s {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+  &--normal {
+    padding: 10px;
+    font-size: 14px;
+  }
+  &--lg {
+    padding: 12px 15px;
+    font-size: 16px;
+  }
+  &--xlg {
+    padding: 15px 25px;
+    font-size: 16px;
+  }
+}
