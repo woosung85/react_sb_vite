@@ -4,6 +4,7 @@ import React from "react";
 import { type commonProps } from "../../../types/common";
 
 export type UICheckBoxProps = {
+  type? : 'basic' | 'square' | 'btn';
   variant?: 'primary' | 'secondary' | 'round' | 'shadow';
   backgroundColor?: string;
   size?: 'xs' | 's' | 'normal'| 'lg' | 'xlg';

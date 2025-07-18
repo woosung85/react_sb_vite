@@ -47,4 +47,18 @@
       color: var(--color-secondary-text);
     }
   }
+  & > .btn {
+    margin: 0;
+    border: 1px solid #aaa;
+    padding: 10px 10px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+    &.checked {
+      border-color: var(--color-pointer);
+    }
+    & > span {
+      margin: 0 auto;
+    }
+  }
 }

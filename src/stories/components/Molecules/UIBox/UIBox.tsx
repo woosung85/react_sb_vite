@@ -1,12 +1,12 @@
 import React from "react";
 import clsx from "clsx";
-import styles from './UISection.module.scss';
+import styles from './UIBox.module.scss';
 
-import { type UISectionProps } from './UISection.types';
+import { type UIBoxProps } from './UIBox.types';
 import { generateClassNamesFromCommonProps } from '../../../utils/ClassNameFromSpacing';
 
 /** Primary UI component for user interaction */
-const UISection = React.forwardRef<HTMLDivElement, UISectionProps>(
+const UIBox = React.forwardRef<HTMLDivElement, UIBoxProps>(
   ({
   
     children,
@@ -19,9 +19,8 @@ const UISection = React.forwardRef<HTMLDivElement, UISectionProps>(
       <div
         className={clsx(
             spacingClassNames,
-            styles.section,
+            styles.UiBox,
             className 
-            // styles[`section--${variant}`],
           )}
           {...props}
       >
@@ -32,5 +31,5 @@ const UISection = React.forwardRef<HTMLDivElement, UISectionProps>(
   
 )
 
-UISection.displayName = 'UISection';
-export default UISection;
+UIBox.displayName = 'UIBox';
+export default UIBox;

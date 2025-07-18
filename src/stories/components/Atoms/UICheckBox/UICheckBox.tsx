@@ -10,8 +10,9 @@ import { UIText , UIIcon } from '@/stories/components'
 
 
 /** Primary UI component for user interaction */
-const UICheckBoxBasic = React.forwardRef<HTMLInputElement, UICheckBoxProps>(
+const UICheckBox = React.forwardRef<HTMLInputElement, UICheckBoxProps>(
   ({
+    type = 'basic',
     label,
     className,
     readOnly = false,
@@ -27,9 +28,9 @@ const UICheckBoxBasic = React.forwardRef<HTMLInputElement, UICheckBoxProps>(
         setInputClick(!inputClick);
       }
     }
-
-    return (
-      <div
+    if (type === 'btn') {
+     return (
+        <div
         className={clsx(
             spacingClassNames,
             styles.checkbox,
@@ -39,61 +40,62 @@ const UICheckBoxBasic = React.forwardRef<HTMLInputElement, UICheckBoxProps>(
           )}
         {...props}
       >
-        <label htmlFor="basicClick" className={styles.label} onClick={() => handleInputClick()}>
+        <label htmlFor="basicClick" className={clsx(styles.btn, inputClick && styles['checked'])} onClick={() => handleInputClick()}>
           <input
             id="basicclick"
             type="checkbox"
             readOnly={readOnly}
             disabled={disabled}
           />
-          <UIIcon className="checkIcon" name={inputClick ? 'checkFin' : 'check'} size={16}/>
           <UIText ml={6} as="span" text={label} />
         </label>
       </div>
-    );
+      );
+    } else {
+      return (
+        <div
+          className={clsx(
+              spacingClassNames,
+              styles.checkbox,
+              readOnly && styles['readonly'],
+              disabled && styles['disabled'],
+              className 
+            )}
+          {...props}
+        >
+          <label htmlFor="basicClick" onClick={() => handleInputClick()}>
+            <input
+              id="basicclick"
+              type="checkbox"
+              readOnly={readOnly}
+              disabled={disabled}
+            />
+            { type === 'basic' ?  
+              <UIIcon className="checkIcon" name={inputClick ? 'checkFin' : 'check'} color={inputClick ? '48ff' : '666'} size={16}/> 
+              :  <UIIcon className="checkIcon" name={inputClick ? 'squareCheckFin' : 'squareCheck'} color={inputClick ? '48ff' : '666'} size={16}/> 
+            }
+            <UIText ml={6} as="span" text={label} />
+          </label>
+        </div>
+      );
+    } 
+    
   }
 )
 
-const UICheckBoxSquare = React.forwardRef<HTMLInputElement, UICheckBoxProps>(
-  ({
-    label,
-    className,
-    readOnly = false,
-    disabled = false,
-    ...props
-  }) => {
-    const spacingClassNames = generateClassNamesFromCommonProps(props);
 
-    const [inputClick, setInputClick] = React.useState(false);
-  
-    return (
-      <div
-        className={clsx(
-            spacingClassNames,
-            styles.checkbox,
-            readOnly && styles['readonly'] ,
-            disabled && styles['disabled'],
-            className 
-          )}
-        {...props}
-      >
-        <label htmlFor="basicClick" className={styles.label} onClick={() => setInputClick(!inputClick)}>
-          <input id="basicclick" type="checkbox" readOnly={readOnly} disabled={disabled}/>
-          <UIIcon className="checkIcon" name={inputClick ? 'checkFin' : 'check'} size={24}/>
-          <UIText ml={6} as="span" text={label} />
-        </label>
-      </div>
-    );
-  }
-)
 
-UICheckBoxBasic.displayName = 'UICheckBox.Basic';
-UICheckBoxSquare.displayName = 'UICheckBox.Square';
 
-const UICheckBox = {
-  Basic: UICheckBoxBasic,
-  Square: UICheckBoxSquare,
-} as const;
+UICheckBox.displayName = 'UICheckBox';
+
+// UICheckBoxSquare.displayName = 'UICheckBox.Square';
+// UICheckBoxBtn.displayName = 'UICheckBox.Btn';
+
+// const UICheckBox = {
+//   Basic: UICheckBoxBasic,
+//   Square: UICheckBoxSquare,
+//   Btn: UICheckBoxBtn,
+// } as const;
 
 export default UICheckBox;
-export type UICheckBoxVariant = keyof typeof UICheckBox;
+// export type UICheckBoxVariant = keyof typeof UICheckBox;

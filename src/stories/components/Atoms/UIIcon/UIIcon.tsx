@@ -8,6 +8,7 @@ import { type UIIconProps } from './UIIcon.types';
 const UIIcon: React.FC<UIIconProps> = ({
   name,
   size = 16,
+  color = '000',
   className,
   style,
 }) => {
@@ -22,6 +23,7 @@ const UIIcon: React.FC<UIIconProps> = ({
         display: 'inline-flex',
         alignItems: 'center',
         justifyContent: 'center',
+        color: `#${color}`,
         ...style,
       }}
       aria-hidden="true"

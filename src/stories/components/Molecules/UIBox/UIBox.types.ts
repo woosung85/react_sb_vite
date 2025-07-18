@@ -3,6 +3,6 @@ import React from "react";
 
 import { type commonProps } from "../../../types/common";
 
-export type UISectionProps = {
+export type UIBoxProps = {
   children?: React.ReactNode;
 }& commonProps ;

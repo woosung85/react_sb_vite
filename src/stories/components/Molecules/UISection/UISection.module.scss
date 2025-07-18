@@ -1,7 +1,8 @@
 .section {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  // flex-wrap: wrap;
+  // flex-direction: row;
+  // align-items: center;
+  // justify-content: center;
+  padding: 20px;
 }

@@ -2,16 +2,20 @@
   //ligth mode
   --color-bg: #fff;
   --color-text: #333;
+  --color-text-sub: #666;
   --color-primary: #555ab9;
   --color-secondary: #fff;
   --color-secondary-text: #333;
+  --color-pointer: #48ff;
 }
 
 [data-theme="dark"] {
   //dark mode
   --color-bg: #333;
   --color-text: #fff;
+  --color-text-sub: #fff;
   --color-primary: #555ab9;
   --color-secondary: #fff;
   --color-secondary-text: #333;
+  --color-pointer: #48ff;
 }
