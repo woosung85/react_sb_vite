@@ -1,0 +1,21 @@
+.btnWrap {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  &--full {
+    width: 100%;
+  }
+  &--wrap {
+    flex-wrap: nowrap;
+  }
+  &--nth {
+    flex-wrap: nowrap;
+
+    & > *:nth-child(1) {
+      flex: 1 1 40%;
+    }
+  }
+}

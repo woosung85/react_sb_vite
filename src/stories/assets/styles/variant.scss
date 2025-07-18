@@ -1,0 +1,17 @@
+:root {
+  //ligth mode
+  --color-bg: #fff;
+  --color-text: #333;
+  --color-primary: #555ab9;
+  --color-secondary: #fff;
+  --color-secondary-text: #333;
+}
+
+[data-theme="dark"] {
+  //dark mode
+  --color-bg: #333;
+  --color-text: #fff;
+  --color-primary: #555ab9;
+  --color-secondary: #fff;
+  --color-secondary-text: #333;
+}

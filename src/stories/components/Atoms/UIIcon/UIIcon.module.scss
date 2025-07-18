@@ -1,0 +1,12 @@
+@use "@/stories/assets/styles/variant" as *;
+
+.icon {
+  display: inline-block;
+  text-align: left;
+  & > label {
+    display: inline-flex;
+    align-items: center;
+
+    cursor: pointer;
+  }
+}

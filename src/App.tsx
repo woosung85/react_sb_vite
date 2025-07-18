@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 import './App.css'
-import { UIButton } from '@/stories/components'
+import { UIButton , UIBtnWrap, UICheckBox } from '@/stories/components'
 
 
 function App() {
@@ -11,12 +11,17 @@ function App() {
   return (
     <>
       <div>
-        <UIButton variant="primary" size='xs' label="눌러주세요" onClick={() => setCount(count + 1)} />
+        <UICheckBox.Basic label='선택해주세요'/>
+        <UIBtnWrap mt={20} variant='nth'>
+          <UIButton variant="secondary" label="닫기" onClick={() => setCount(count + 1)} />
+          <UIButton variant="primary" label="눌러주세요" onClick={() => setCount(count + 1)} />
+
+        </UIBtnWrap>
         <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
+          {/* <img src={viteLogo} className="logo" alt="Vite logo" /> */}
         </a>
         <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+          {/* <img src={reactLogo} className="logo react" alt="React logo" /> */}
         </a>
       </div>
       <h1>Vite + React</h1>

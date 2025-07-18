@@ -1,5 +1,5 @@
 {
-  "name": "react_sb",
+  "name": "react_sb_vite",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "generate:icons": "tsx scripts/generate-icons.ts"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
@@ -38,9 +39,12 @@
     "playwright": "^1.54.0",
     "sass": "^1.89.2",
     "storybook": "^9.0.16",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.35.1",
     "vite": "^7.0.4",
+    "vite-plugin-svgr": "^4.3.0",
     "vitest": "^3.2.4"
   }
 }

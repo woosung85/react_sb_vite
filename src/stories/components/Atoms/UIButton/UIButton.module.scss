@@ -1,31 +1,35 @@
+@use "@/stories/assets/styles/variant" as *;
+
 .button {
   display: inline-block;
   cursor: pointer;
   border: 0;
+  width: 100%;
   border-radius: 0.3em;
   font-weight: 700;
   line-height: 1;
   font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   &--primary {
-    background-color: #555ab9;
+    background-color: var(--color-primary);
     color: white;
   }
   &--secondary {
     box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
     background-color: transparent;
-    color: #333;
+    color: var(--color-text);
+    background-color: var(--color-bg);
   }
   &--round {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--color-text);
+    color: var(--color-bg);
     padding: 0 15px;
     border-radius: 10rem;
   }
   &--shadow {
     border-radius: 0.3px;
-    background: #333;
-    color: #fff;
+    background: var(--color-text);
+    color: var(--color-bg);
     -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2),
       0 2px 3px rgba(0, 0, 0, 0.05);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2), 0 2px 3px rgba(0, 0, 0, 0.05);

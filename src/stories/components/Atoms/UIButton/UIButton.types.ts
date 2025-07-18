@@ -3,19 +3,14 @@ import React from "react";
 
 import { type commonProps } from "../../../types/common";
 
-export type ButtonProps = {
+export type UIButtonProps = {
   as?: string | React.ElementType; // Allows for custom components  
   asChild?: boolean;  
   href? : string;
   variant?: 'primary' | 'secondary' | 'round' | 'shadow';
   backgroundColor?: string;
   size?: 'xs' | 's' | 'normal'| 'lg' | 'xlg';
-  borderRadius?: string;
-  fontSize?: string;
-  fontWeight?: string;
-  textColor?: string;
   textAlign?: string;
-  margin?: string;
 
   label: string;
   onClick?: () => void;

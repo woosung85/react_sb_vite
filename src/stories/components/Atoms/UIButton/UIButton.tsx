@@ -1,15 +1,15 @@
 import React from "react";
-import { Slot } from '@radix-ui/react-slot';
+// import { Slot } from '@radix-ui/react-slot';
 import clsx from "clsx";
 import styles from './UIButton.module.scss';
 
-import { type ButtonProps } from './UIButton.types';
-import { generateSpacingclassNameFromSpacing } from '../../../utils/ClassNameFromSpacing';
+import { type UIButtonProps } from './UIButton.types';
+import { generateClassNamesFromCommonProps } from '../../../utils/ClassNameFromSpacing';
 
 /** Primary UI component for user interaction */
-const UIButton = React.forwardRef<HTMLElement, ButtonProps>(
+const UIButton = React.forwardRef<HTMLElement, UIButtonProps>(
   ({
-    asChild = false,
+    // asChild = false,
     variant = "primary",
     size = "normal",
     backgroundColor,
@@ -21,33 +21,14 @@ const UIButton = React.forwardRef<HTMLElement, ButtonProps>(
     className,
     ...props
   }, ref) => {
-    const spacingClassNames = generateSpacingclassNameFromSpacing(props);
+    const spacingClassNames = generateClassNamesFromCommonProps(props);
 
-    if (asChild && href) {
-      return (
-        <Slot
-          ref={ref as any}
-          className={clsx(
-            spacingClassNames,
-            styles.button,
-            styles[`button--${variant}`],
-            styles[`button--${size}`],
-            className
-          )}
-          style={{ backgroundColor }}
-          {...props}
-        >
-          {leftIcon && <span className={styles.icon}>{leftIcon}</span>}
-          {label}
-          {rightIcon && <span className={styles.icon}>{rightIcon}</span>}
-        </Slot>
-      );
-
-    }
+    
     const Component = href ? 'a' : 'button';
   
     return (
       <Component
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ref={ref as any}
         href={href}
         className={clsx(

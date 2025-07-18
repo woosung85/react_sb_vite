@@ -22,12 +22,13 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-
+    
+    "types": ["vite-plugin-svgr/client"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     }
 
   },
-  "include": ["src"]
+ "include": ["src"]
 }
