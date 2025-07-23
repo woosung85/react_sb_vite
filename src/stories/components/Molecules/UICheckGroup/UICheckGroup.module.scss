@@ -1,4 +1,8 @@
 .checkGroup {
   display: block;
   width: 100%;
+
+  & > div {
+    gap: 5px;
+  }
 }

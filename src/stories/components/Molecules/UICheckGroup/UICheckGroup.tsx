@@ -19,6 +19,10 @@ const UICheckGroup = React.forwardRef<HTMLDivElement, UICheckGroupProps>(
   
     return (
       <UIBox
+        display="flex"
+        flexWrap="wrap"
+        flexDirection="column"
+        gap="5"
         className={clsx(
             spacingClassNames,
             styles.checkGroup,
@@ -29,8 +33,8 @@ const UICheckGroup = React.forwardRef<HTMLDivElement, UICheckGroupProps>(
           {data && data.map((item, index) => {
             if (item == null) return null; // null 또는 undefined 방지
             return (
-              <UIBox className={clsx(styles.checkList)} key={index}>
                 <UICheckBox
+                  className={clsx(styles.checkList)} key={index}
                   type={type}
                   label={
                     typeof item === 'object' && item !== null && 'label' in item
@@ -42,7 +46,6 @@ const UICheckGroup = React.forwardRef<HTMLDivElement, UICheckGroupProps>(
                   readOnly={false}
                   disabled={false}
                 />
-              </UIBox>
             );
           })}
           {children}

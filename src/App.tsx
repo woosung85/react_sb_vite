@@ -2,7 +2,7 @@ import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
-import { UIButton , UIBtnWrap, UICheckBox, UICheckGroup } from '@/stories/components'
+import { UIButton , UIBtnWrap, UICheckBox, UICheckGroup,UIRadioBox } from '@/stories/components'
 
 
 function App() {
@@ -18,6 +18,9 @@ function App() {
   return (
     <>
       <div>
+        <UIRadioBox type='basic' name="abc" value='11'/>
+        <UIRadioBox type='basic' name="abc" value='22'/>
+        <UIRadioBox type='basic' name="abc" value='33'/>
         <UICheckGroup data={tempList} />
         <UICheckBox type='basic' label='선택해주세요'/>
         <UICheckBox type="btn" label='선택해주세요'/>
